@@ -14,9 +14,10 @@
 - (void)executeGET {
     [self executeWithParameters:nil success:^(NSArray *data) {
         for (NSDictionary *item in data) {
-            ISUser *user = [ISUser userWithData:item];
+            [ISUser userWithData:item];
             
         }
+        [[CoreDataController sharedController] saveContext];
     } failure:nil];
 }
 

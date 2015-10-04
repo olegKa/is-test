@@ -7,15 +7,39 @@
 //
 
 #import "ISAPIGetPosts.h"
+#import "ISPost.h"
 
 @implementation ISAPIGetPosts
 
-- (instancetype)init {
-    return [super initWithAction:[ISAPIAction actionWithMethod:ISAPIActionMethodPosts]];
+- (instancetype)initWithAction:(ISAPIAction *)action {
+    if (self = [super initWithAction:action]) {
+        _userId = NSNotFound;
+    }
+    return self;
 }
 
-- (instancetype)initWithPostId:(NSUInteger)postId {
-    return [super initWithAction:[ISAPIAction actionWithActionMainMethod:ISAPIActionMethodPosts forObjectId:postId andDetailMethod:ISAPIActionMethodUnknown]];
+
+- (void)executeGET {
+    NSDictionary *parameters;
+    
+    if (self.userId != NSNotFound) {
+        parameters = @{key_post_userId:@(self.userId)};
+    }
+    
+    [self executeWithParameters:parameters success:^(NSArray *data) {
+        for (NSDictionary *item in data) {
+            [ISPost postWithData:item];
+        }
+        [[CoreDataController sharedController] saveContext];
+    } failure:nil];
+}
+
+#pragma mark - Properties
+- (void)setUserId:(NSUInteger)userId {
+    _userId = userId;
+//    if (self.action) {
+//        self.action.objectId = userId;
+//    }
 }
 
 @end

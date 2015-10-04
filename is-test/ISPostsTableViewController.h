@@ -11,6 +11,6 @@
 
 @interface ISPostsTableViewController : UITableViewController
 
-@property (nonatomic, assign) NSUInteger userId;
+@property (nonatomic, readonly) NSUInteger userId;
 
 @end

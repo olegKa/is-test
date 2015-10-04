@@ -10,4 +10,6 @@
 
 @interface ISAPIGetPosts : ISAPIOperation
 
+@property (nonatomic, assign) NSUInteger userId;
+
 @end

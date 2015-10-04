@@ -7,6 +7,7 @@
 //
 
 #import "ISUsersViewController.h"
+#import "ISTabBarController.h"
 #import "CoreDataController.h"
 #import "ISUser.h"
 #import "ISAPIGetUsers.h"
@@ -99,14 +100,17 @@ NSString *const identifierUserCell = @"userCell";
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    ISUser *selectedUser = [self.fetchedResultsController.sections[selectedIndexPath.section] objects][selectedIndexPath.row];
+    if ([segue.destinationViewController isKindOfClass:[ISTabBarController class]]) {
+        [(ISTabBarController *)segue.destinationViewController setUser:selectedUser];
+    }
 }
-*/
+
 
 @end
