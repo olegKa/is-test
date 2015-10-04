@@ -8,6 +8,8 @@
 
 #import "ISAPIClient.h"
 
+#define _url_ @"http://jsonplaceholder.typicode.com"
+
 @interface ISAPIClient ()
 
 @property (nonatomic, strong) AFNetworkReachabilityManager *reachabilityManager;
@@ -16,11 +18,22 @@
 
 @implementation ISAPIClient
 
-dynamic reachabilityManager;
+@dynamic reachabilityManager;
+
++ (instancetype)sharedClient {
+    static ISAPIClient *_sharedClient = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedClient = [[ISAPIClient alloc] initWithBaseURL:[NSURL URLWithString:_url_]];
+        _sharedClient.securityPolicy = [AFSecurityPolicy policyWithPinningMode:AFSSLPinningModeNone];
+        _sharedClient.responseSerializer = [AFHTTPResponseSerializer serializer];
+    });
+    
+    return _sharedClient;
+}
 
 - (instancetype)initWithBaseURL:(NSURL *)url {
     if (self = [super initWithBaseURL:url]) {
-        backgroundTasks = [NSMutableArray new];
         self.reachabilityManager = [AFNetworkReachabilityManager managerForDomain:[url absoluteString]];
         [self.reachabilityManager startMonitoring];
         [self.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {

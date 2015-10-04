@@ -1,15 +1,14 @@
 //
-//  ISAPIClient.h
+//  ISAPIGetUsers.h
 //  is-test
 //
 //  Created by OLEG KALININ on 03.10.15.
 //  Copyright © 2015 OLEG KALININ. All rights reserved.
 //
 
-#import "AFHTTPSessionManager.h"
+#import "ISAPIOperation.h"
 
-@interface ISAPIClient : AFHTTPSessionManager
+@interface ISAPIGetUsers : ISAPIOperation
 
-+ (instancetype)sharedClient;
 
 @end
