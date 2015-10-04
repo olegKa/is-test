@@ -8,10 +8,11 @@
 
 #import "ISCommentsTableViewController.h"
 #import "UIViewController+IStest.h"
+#import "ISPostTableViewCell.h"
 #import "ISComment.h"
 #import "ISAPIGetComments.h"
 
-NSString *const identifierCommentCell = @"commentCell";
+NSString *const identifierCommentCell = @"postCell";
 
 
 @interface ISCommentsTableViewController ()
@@ -25,9 +26,17 @@ NSString *const identifierCommentCell = @"commentCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configure];
     [self initializeFetchedResultsControllerForEntity:entity_comments andSortDescriptionKeyName:key_comment_id andSectionKeyName:nil];
     [self fetchedResultsControllerExecute];
     [self startUpdateData];
+}
+
+- (void)configure {
+    self.tableView.estimatedRowHeight = 35.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    [self.tableView registerNib:[UINib nibWithNibName:@"ISPostTableViewCell" bundle:nil] forCellReuseIdentifier:identifierCommentCell];
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -95,14 +104,16 @@ NSString *const identifierCommentCell = @"commentCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierCommentCell forIndexPath:indexPath];
-    [self configureCell:cell forIndexPath:indexPath];
+    [self configureCell:(ISPostTableViewCell *)cell forIndexPath:indexPath];
     return cell;
 }
 
-- (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(ISPostTableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
     ISComment * comment= [self.fetchedResultsController.sections[indexPath.section] objects][indexPath.row];
-    cell.textLabel.text = comment.name;
-    cell.detailTextLabel.text = comment.body;
+//    cell.textLabel.text = comment.name;
+//    cell.detailTextLabel.text = comment.body;
+    cell.title = comment.name;
+    cell.body = comment.body;
 }
 
 /*

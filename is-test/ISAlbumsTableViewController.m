@@ -52,6 +52,11 @@ static NSString *const identifierAlbumCell = @"albumCell";
     [operation executeGET];
 }
 
+#pragma mark - IBAction
+- (IBAction)btnUsers:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 #pragma mark - ISFetchedResultControllerDelegate
 - (NSPredicate *)predicateForFetchedResultController {
     NSPredicate *filter = [NSPredicate predicateWithFormat:@"userId == %d", self.userId];

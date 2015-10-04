@@ -18,7 +18,6 @@
 		4F2C29C21BC006A800BB5AAB /* is_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C29C11BC006A800BB5AAB /* is_testTests.m */; };
 		4F2C29CD1BC006A800BB5AAB /* is_testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C29CC1BC006A800BB5AAB /* is_testUITests.m */; };
 		4F2C29DE1BC0099300BB5AAB /* ISAPIClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C29DD1BC0099300BB5AAB /* ISAPIClient.m */; settings = {ASSET_TAGS = (); }; };
-		4F2C29E01BC00B1200BB5AAB /* libPods-is-testTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2C29DF1BC00B1200BB5AAB /* libPods-is-testTests.a */; };
 		4FDD17211BC00DD400470230 /* ISAPIOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17201BC00DD400470230 /* ISAPIOperation.m */; settings = {ASSET_TAGS = (); }; };
 		4FDD17241BC00EC700470230 /* ISAPIAction.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17231BC00EC700470230 /* ISAPIAction.m */; settings = {ASSET_TAGS = (); }; };
 		4FDD17271BC01DB200470230 /* ISAPIGetPosts.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17261BC01DB200470230 /* ISAPIGetPosts.m */; settings = {ASSET_TAGS = (); }; };
@@ -46,9 +45,6 @@
 		4FDD17791BC02F4300470230 /* ISObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17781BC02F4300470230 /* ISObject.m */; settings = {ASSET_TAGS = (); }; };
 		4FDD177E1BC03D9A00470230 /* ISBaseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD177D1BC03D9A00470230 /* ISBaseTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4FDD17811BC03DC400470230 /* ISUsersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17801BC03DC400470230 /* ISUsersViewController.m */; settings = {ASSET_TAGS = (); }; };
-		4FDD17841BC04F4000470230 /* Posts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FDD17831BC04F4000470230 /* Posts.storyboard */; settings = {ASSET_TAGS = (); }; };
-		4FDD17861BC04F5300470230 /* Albums.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FDD17851BC04F5300470230 /* Albums.storyboard */; settings = {ASSET_TAGS = (); }; };
-		4FDD17881BC04F6600470230 /* ToDo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FDD17871BC04F6600470230 /* ToDo.storyboard */; settings = {ASSET_TAGS = (); }; };
 		4FDD178F1BC0513F00470230 /* ISPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD178E1BC0513F00470230 /* ISPostsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4FDD17931BC0D1BB00470230 /* UIViewController+IStest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17921BC0D1BB00470230 /* UIViewController+IStest.m */; settings = {ASSET_TAGS = (); }; };
 		4FDD17961BC0E8B500470230 /* ISTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17951BC0E8B500470230 /* ISTabBarController.m */; settings = {ASSET_TAGS = (); }; };
@@ -60,6 +56,9 @@
 		4FDD17AB1BC116E600470230 /* ISAlbumsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17AA1BC116E600470230 /* ISAlbumsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4FDD17AF1BC1325600470230 /* ISPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17AE1BC1325600470230 /* ISPhotoCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
 		4FDD17B11BC15FB300470230 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDD17B01BC15FB300470230 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
+		4FDD17B51BC191D900470230 /* ISPostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17B31BC191D900470230 /* ISPostTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		4FDD17B61BC191D900470230 /* ISPostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4FDD17B41BC191D900470230 /* ISPostTableViewCell.xib */; settings = {ASSET_TAGS = (); }; };
+		4FDD17B91BC19A7400470230 /* ISAddressAndCompanyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17B81BC19A7400470230 /* ISAddressAndCompanyTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -152,9 +151,6 @@
 		4FDD177D1BC03D9A00470230 /* ISBaseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISBaseTableViewController.m; sourceTree = "<group>"; };
 		4FDD177F1BC03DC400470230 /* ISUsersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISUsersViewController.h; sourceTree = "<group>"; };
 		4FDD17801BC03DC400470230 /* ISUsersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISUsersViewController.m; sourceTree = "<group>"; };
-		4FDD17831BC04F4000470230 /* Posts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Posts.storyboard; sourceTree = "<group>"; };
-		4FDD17851BC04F5300470230 /* Albums.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Albums.storyboard; sourceTree = "<group>"; };
-		4FDD17871BC04F6600470230 /* ToDo.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ToDo.storyboard; sourceTree = "<group>"; };
 		4FDD178D1BC0513F00470230 /* ISPostsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPostsTableViewController.h; sourceTree = "<group>"; };
 		4FDD178E1BC0513F00470230 /* ISPostsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISPostsTableViewController.m; sourceTree = "<group>"; };
 		4FDD17911BC0D1BA00470230 /* UIViewController+IStest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+IStest.h"; sourceTree = "<group>"; };
@@ -176,6 +172,11 @@
 		4FDD17AD1BC1325600470230 /* ISPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPhotoCollectionViewCell.h; sourceTree = "<group>"; };
 		4FDD17AE1BC1325600470230 /* ISPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISPhotoCollectionViewCell.m; sourceTree = "<group>"; };
 		4FDD17B01BC15FB300470230 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		4FDD17B21BC191D900470230 /* ISPostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPostTableViewCell.h; sourceTree = "<group>"; };
+		4FDD17B31BC191D900470230 /* ISPostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISPostTableViewCell.m; sourceTree = "<group>"; };
+		4FDD17B41BC191D900470230 /* ISPostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ISPostTableViewCell.xib; sourceTree = "<group>"; };
+		4FDD17B71BC19A7400470230 /* ISAddressAndCompanyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAddressAndCompanyTableViewController.h; sourceTree = "<group>"; };
+		4FDD17B81BC19A7400470230 /* ISAddressAndCompanyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISAddressAndCompanyTableViewController.m; sourceTree = "<group>"; };
 		6E271F79DDB9987EF014C0A4 /* Pods_is_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_is_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7466CF9BE22C8F2196A9B5DC /* Pods-is-testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-is-testUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-is-testUITests/Pods-is-testUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7979749443D7E041D7E990F5 /* Pods-is-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-is-testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-is-testTests/Pods-is-testTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -190,7 +191,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4FDD17301BC020D700470230 /* CoreData.framework in Frameworks */,
-				4F2C29E01BC00B1200BB5AAB /* libPods-is-testTests.a in Frameworks */,
 				1EC017792C7AC4FE3CE34273 /* Pods_is_test.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,15 +440,20 @@
 		4FDD177B1BC03D6E00470230 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				4FDD17991BC100F800470230 /* Comments View Controller */,
 				4FDD17821BC03FA700470230 /* User View Controller */,
 				4FDD17891BC0509E00470230 /* Posts View Controller */,
+				4FDD17991BC100F800470230 /* Comments View Controller */,
 				4FDD178B1BC050CB00470230 /* ToDo View Controller */,
 				4FDD17AC1BC116EC00470230 /* Albums View Controller */,
 				4FDD178A1BC050B500470230 /* Photos View Controller */,
 				4FDD178C1BC050F400470230 /* Base View Controller */,
 				4FDD17971BC100B800470230 /* UIViewController+ISTest */,
 				4FDD17981BC100E200470230 /* TabBarController */,
+				4FDD17B21BC191D900470230 /* ISPostTableViewCell.h */,
+				4FDD17B31BC191D900470230 /* ISPostTableViewCell.m */,
+				4FDD17B41BC191D900470230 /* ISPostTableViewCell.xib */,
+				4FDD17B71BC19A7400470230 /* ISAddressAndCompanyTableViewController.h */,
+				4FDD17B81BC19A7400470230 /* ISAddressAndCompanyTableViewController.m */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -502,9 +507,6 @@
 			isa = PBXGroup;
 			children = (
 				4F2C29B01BC006A800BB5AAB /* Main.storyboard */,
-				4FDD17831BC04F4000470230 /* Posts.storyboard */,
-				4FDD17851BC04F5300470230 /* Albums.storyboard */,
-				4FDD17871BC04F6600470230 /* ToDo.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -686,11 +688,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4FDD17881BC04F6600470230 /* ToDo.storyboard in Resources */,
-				4FDD17841BC04F4000470230 /* Posts.storyboard in Resources */,
-				4FDD17861BC04F5300470230 /* Albums.storyboard in Resources */,
 				4F2C29B71BC006A800BB5AAB /* LaunchScreen.storyboard in Resources */,
 				4F2C29B41BC006A800BB5AAB /* Assets.xcassets in Resources */,
+				4FDD17B61BC191D900470230 /* ISPostTableViewCell.xib in Resources */,
 				4FDD17B11BC15FB300470230 /* Default-568h@2x.png in Resources */,
 				4F2C29B21BC006A800BB5AAB /* Main.storyboard in Resources */,
 			);
@@ -842,6 +842,7 @@
 			files = (
 				4FDD17211BC00DD400470230 /* ISAPIOperation.m in Sources */,
 				4FDD17271BC01DB200470230 /* ISAPIGetPosts.m in Sources */,
+				4FDD17B91BC19A7400470230 /* ISAddressAndCompanyTableViewController.m in Sources */,
 				4FDD175A1BC0284900470230 /* ISCompany.m in Sources */,
 				4FDD17591BC0284900470230 /* ISCompany+CoreDataProperties.m in Sources */,
 				4FDD17241BC00EC700470230 /* ISAPIAction.m in Sources */,
@@ -853,6 +854,7 @@
 				4FDD17641BC0284900470230 /* ISPhoto.m in Sources */,
 				4FDD17761BC02AFE00470230 /* ISAPIGetUsers.m in Sources */,
 				4FDD177E1BC03D9A00470230 /* ISBaseTableViewController.m in Sources */,
+				4FDD17B51BC191D900470230 /* ISPostTableViewCell.m in Sources */,
 				4FDD175D1BC0284900470230 /* ISUser+CoreDataProperties.m in Sources */,
 				4FDD17A51BC10E0800470230 /* ISAPIGetPhotos.m in Sources */,
 				4FDD175E1BC0284900470230 /* ISUser.m in Sources */,
@@ -1021,10 +1023,7 @@
 				INFOPLIST_FILE = "is-test/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.is-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -1038,10 +1037,7 @@
 				INFOPLIST_FILE = "is-test/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/build/Debug-iphoneos",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ios.is-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

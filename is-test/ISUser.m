@@ -33,6 +33,7 @@
         if (address) {
             [address addUsersObject:user];
             user.address = address;
+            [address addUsersObject:user];
         }
     }
     
@@ -42,6 +43,7 @@
         if (company) {
             [company addUsersObject:user];
             user.company = company;
+            [company addUsersObject:user];
         }
     }
     

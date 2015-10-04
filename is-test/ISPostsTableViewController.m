@@ -9,6 +9,7 @@
 #import "ISPostsTableViewController.h"
 #import "ISTabBarController.h"
 #import "ISCommentsTableViewController.h"
+#import "ISPostTableViewCell.h"
 #import "ISPost.h"
 #import "ISAPIGetPosts.h"
 
@@ -35,6 +36,9 @@ NSString *const identifierPostCell = @"postCell";
 
 - (void)configure {
     self.navigationItem.title = @"POSTS";
+    self.tableView.estimatedRowHeight = 35.0;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
+    [self.tableView registerNib:[UINib nibWithNibName:@"ISPostTableViewCell" bundle:nil] forCellReuseIdentifier:identifierPostCell];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -58,6 +62,11 @@ NSString *const identifierPostCell = @"postCell";
 - (NSPredicate *)predicateForFetchedResultController {
     NSPredicate *filter = [NSPredicate predicateWithFormat:@"userId == %d", self.userId];
     return filter;
+}
+
+#pragma mark - IBAction
+- (IBAction)btnUsers:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - NSFetchedResultControllerDelegate
@@ -108,17 +117,23 @@ NSString *const identifierPostCell = @"postCell";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierPostCell forIndexPath:indexPath];
-    [self configureCell:cell forIndexPath:indexPath];
+    [self configureCell:(ISPostTableViewCell *)cell forIndexPath:indexPath];
     return cell;
 }
 
-- (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+- (void)configureCell:(ISPostTableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
     ISPost * post = [self.fetchedResultsController.sections[indexPath.section] objects][indexPath.row];
-    cell.textLabel.text = post.title;
-    cell.detailTextLabel.text = post.body;
+//    cell.textLabel.text = post.title;
+//    cell.detailTextLabel.text = post.body;
+    cell.title = post.title;
+    cell.body = post.body;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 }
 
-
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self performSegueWithIdentifier:@"segueToComments" sender:nil];
+}
 
 #pragma mark - Navigation
 

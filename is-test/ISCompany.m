@@ -14,7 +14,7 @@
 + (instancetype)companyWithData:(NSDictionary *)data {
     ISCompany *company = [ISCompany companyWithName:data[key_company_name]];
     if (!company) {
-        [NSEntityDescription insertNewObjectForEntityForName:entity_companies inManagedObjectContext:[CoreDataController sharedController].managedObjectContext];
+        company = [NSEntityDescription insertNewObjectForEntityForName:entity_companies inManagedObjectContext:[CoreDataController sharedController].managedObjectContext];
     }
     
     company.bs = data[key_company_bs];

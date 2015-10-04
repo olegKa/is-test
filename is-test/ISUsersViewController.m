@@ -8,6 +8,7 @@
 
 #import "ISUsersViewController.h"
 #import "ISTabBarController.h"
+#import "ISAddressAndCompanyTableViewController.h"
 #import "CoreDataController.h"
 #import "ISUser.h"
 #import "ISAPIGetUsers.h"
@@ -20,6 +21,10 @@ NSString *const identifierUserCell = @"userCell";
     NSFetchedResultsControllerDelegate,
     ISAPIOperationDelegate
 >
+{
+    NSIndexPath *selectedIndexPath;
+}
+
 @end
 
 @implementation ISUsersViewController
@@ -103,16 +108,27 @@ NSString *const identifierUserCell = @"userCell";
     cell.detailTextLabel.text = user.username;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    selectedIndexPath = indexPath;
+}
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+    selectedIndexPath = indexPath;
+}
 
 #pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-    ISUser *selectedUser = [self.fetchedResultsController.sections[selectedIndexPath.section] objects][selectedIndexPath.row];
-    if ([segue.destinationViewController isKindOfClass:[ISTabBarController class]]) {
-        [(ISTabBarController *)segue.destinationViewController setUser:selectedUser];
+    if (selectedIndexPath) {
+        ISUser *selectedUser = [self.fetchedResultsController.sections[selectedIndexPath.section] objects][selectedIndexPath.row];
+        
+        if ([segue.destinationViewController isKindOfClass:[ISTabBarController class]]) {
+            [(ISTabBarController *)segue.destinationViewController setUser:selectedUser];
+        }
+        
+        if ([segue.destinationViewController isKindOfClass:[ISAddressAndCompanyTableViewController class]]) {
+            [(ISAddressAndCompanyTableViewController *)segue.destinationViewController setUser:selectedUser];
+        }
     }
 }
 

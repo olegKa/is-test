@@ -14,7 +14,7 @@
 + (instancetype)addressWithData:(NSDictionary *)data {
     ISAddress *address = [ISAddress addressWithGeo:data[key_address_geo]];
     if (!address) {
-        [NSEntityDescription insertNewObjectForEntityForName:entity_addresses inManagedObjectContext:[CoreDataController sharedController].managedObjectContext];
+        address = [NSEntityDescription insertNewObjectForEntityForName:entity_addresses inManagedObjectContext:[CoreDataController sharedController].managedObjectContext];
     }
     
     address.city = data[key_address_city];
