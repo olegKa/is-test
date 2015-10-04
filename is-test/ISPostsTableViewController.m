@@ -25,11 +25,16 @@ NSString *const identifierPostCell = @"postCell";
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self configure];
     self.fetchedResultControllerDelegate = self;
     [self initializeFetchedResultsControllerForEntity:entity_posts andSortDescriptionKeyName:key_post_id andSectionKeyName:nil];
     [self fetchedResultsControllerExecute];
     [self startUpdateData];
 
+}
+
+- (void)configure {
+    self.navigationItem.title = @"POSTS";
 }
 
 - (void)didReceiveMemoryWarning {

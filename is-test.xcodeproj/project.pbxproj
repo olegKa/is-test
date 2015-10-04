@@ -54,6 +54,12 @@
 		4FDD17961BC0E8B500470230 /* ISTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17951BC0E8B500470230 /* ISTabBarController.m */; settings = {ASSET_TAGS = (); }; };
 		4FDD179C1BC1013A00470230 /* ISCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD179B1BC1013A00470230 /* ISCommentsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4FDD179F1BC1052A00470230 /* ISAPIGetComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD179E1BC1052A00470230 /* ISAPIGetComments.m */; settings = {ASSET_TAGS = (); }; };
+		4FDD17A21BC10DCD00470230 /* ISAPIGetAlbums.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17A11BC10DCD00470230 /* ISAPIGetAlbums.m */; settings = {ASSET_TAGS = (); }; };
+		4FDD17A51BC10E0800470230 /* ISAPIGetPhotos.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17A41BC10E0800470230 /* ISAPIGetPhotos.m */; settings = {ASSET_TAGS = (); }; };
+		4FDD17A81BC1153200470230 /* ISPhotoCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17A71BC1153200470230 /* ISPhotoCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4FDD17AB1BC116E600470230 /* ISAlbumsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17AA1BC116E600470230 /* ISAlbumsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4FDD17AF1BC1325600470230 /* ISPhotoCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17AE1BC1325600470230 /* ISPhotoCollectionViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		4FDD17B11BC15FB300470230 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4FDD17B01BC15FB300470230 /* Default-568h@2x.png */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +165,17 @@
 		4FDD179B1BC1013A00470230 /* ISCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISCommentsTableViewController.m; sourceTree = "<group>"; };
 		4FDD179D1BC1052A00470230 /* ISAPIGetComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAPIGetComments.h; sourceTree = "<group>"; };
 		4FDD179E1BC1052A00470230 /* ISAPIGetComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISAPIGetComments.m; sourceTree = "<group>"; };
+		4FDD17A01BC10DCD00470230 /* ISAPIGetAlbums.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAPIGetAlbums.h; sourceTree = "<group>"; };
+		4FDD17A11BC10DCD00470230 /* ISAPIGetAlbums.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISAPIGetAlbums.m; sourceTree = "<group>"; };
+		4FDD17A31BC10E0800470230 /* ISAPIGetPhotos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAPIGetPhotos.h; sourceTree = "<group>"; };
+		4FDD17A41BC10E0800470230 /* ISAPIGetPhotos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISAPIGetPhotos.m; sourceTree = "<group>"; };
+		4FDD17A61BC1153200470230 /* ISPhotoCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPhotoCollectionViewController.h; sourceTree = "<group>"; };
+		4FDD17A71BC1153200470230 /* ISPhotoCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISPhotoCollectionViewController.m; sourceTree = "<group>"; };
+		4FDD17A91BC116E600470230 /* ISAlbumsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAlbumsTableViewController.h; sourceTree = "<group>"; };
+		4FDD17AA1BC116E600470230 /* ISAlbumsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISAlbumsTableViewController.m; sourceTree = "<group>"; };
+		4FDD17AD1BC1325600470230 /* ISPhotoCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISPhotoCollectionViewCell.h; sourceTree = "<group>"; };
+		4FDD17AE1BC1325600470230 /* ISPhotoCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISPhotoCollectionViewCell.m; sourceTree = "<group>"; };
+		4FDD17B01BC15FB300470230 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6E271F79DDB9987EF014C0A4 /* Pods_is_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_is_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7466CF9BE22C8F2196A9B5DC /* Pods-is-testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-is-testUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-is-testUITests/Pods-is-testUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7979749443D7E041D7E990F5 /* Pods-is-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-is-testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-is-testTests/Pods-is-testTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -200,6 +217,7 @@
 		4F2C29981BC006A800BB5AAB = {
 			isa = PBXGroup;
 			children = (
+				4FDD17B01BC15FB300470230 /* Default-568h@2x.png */,
 				4F2C29A31BC006A800BB5AAB /* is-test */,
 				4F2C29C01BC006A800BB5AAB /* is-testTests */,
 				4F2C29CB1BC006A800BB5AAB /* is-testUITests */,
@@ -276,6 +294,10 @@
 				4FDD17261BC01DB200470230 /* ISAPIGetPosts.m */,
 				4FDD179D1BC1052A00470230 /* ISAPIGetComments.h */,
 				4FDD179E1BC1052A00470230 /* ISAPIGetComments.m */,
+				4FDD17A01BC10DCD00470230 /* ISAPIGetAlbums.h */,
+				4FDD17A11BC10DCD00470230 /* ISAPIGetAlbums.m */,
+				4FDD17A31BC10E0800470230 /* ISAPIGetPhotos.h */,
+				4FDD17A41BC10E0800470230 /* ISAPIGetPhotos.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -422,7 +444,8 @@
 				4FDD17821BC03FA700470230 /* User View Controller */,
 				4FDD17891BC0509E00470230 /* Posts View Controller */,
 				4FDD178B1BC050CB00470230 /* ToDo View Controller */,
-				4FDD178A1BC050B500470230 /* Album View Controller */,
+				4FDD17AC1BC116EC00470230 /* Albums View Controller */,
+				4FDD178A1BC050B500470230 /* Photos View Controller */,
 				4FDD178C1BC050F400470230 /* Base View Controller */,
 				4FDD17971BC100B800470230 /* UIViewController+ISTest */,
 				4FDD17981BC100E200470230 /* TabBarController */,
@@ -448,11 +471,15 @@
 			name = "Posts View Controller";
 			sourceTree = "<group>";
 		};
-		4FDD178A1BC050B500470230 /* Album View Controller */ = {
+		4FDD178A1BC050B500470230 /* Photos View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				4FDD17A61BC1153200470230 /* ISPhotoCollectionViewController.h */,
+				4FDD17A71BC1153200470230 /* ISPhotoCollectionViewController.m */,
+				4FDD17AD1BC1325600470230 /* ISPhotoCollectionViewCell.h */,
+				4FDD17AE1BC1325600470230 /* ISPhotoCollectionViewCell.m */,
 			);
-			name = "Album View Controller";
+			name = "Photos View Controller";
 			sourceTree = "<group>";
 		};
 		4FDD178B1BC050CB00470230 /* ToDo View Controller */ = {
@@ -507,6 +534,15 @@
 				4FDD179B1BC1013A00470230 /* ISCommentsTableViewController.m */,
 			);
 			name = "Comments View Controller";
+			sourceTree = "<group>";
+		};
+		4FDD17AC1BC116EC00470230 /* Albums View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FDD17A91BC116E600470230 /* ISAlbumsTableViewController.h */,
+				4FDD17AA1BC116E600470230 /* ISAlbumsTableViewController.m */,
+			);
+			name = "Albums View Controller";
 			sourceTree = "<group>";
 		};
 		8B812DD84C07518557F061EE /* Pods */ = {
@@ -655,6 +691,7 @@
 				4FDD17861BC04F5300470230 /* Albums.storyboard in Resources */,
 				4F2C29B71BC006A800BB5AAB /* LaunchScreen.storyboard in Resources */,
 				4F2C29B41BC006A800BB5AAB /* Assets.xcassets in Resources */,
+				4FDD17B11BC15FB300470230 /* Default-568h@2x.png in Resources */,
 				4F2C29B21BC006A800BB5AAB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -817,10 +854,12 @@
 				4FDD17761BC02AFE00470230 /* ISAPIGetUsers.m in Sources */,
 				4FDD177E1BC03D9A00470230 /* ISBaseTableViewController.m in Sources */,
 				4FDD175D1BC0284900470230 /* ISUser+CoreDataProperties.m in Sources */,
+				4FDD17A51BC10E0800470230 /* ISAPIGetPhotos.m in Sources */,
 				4FDD175E1BC0284900470230 /* ISUser.m in Sources */,
 				4FDD17331BC020F400470230 /* is-test.xcdatamodeld in Sources */,
 				4FDD175F1BC0284900470230 /* ISComment+CoreDataProperties.m in Sources */,
 				4F2C29A91BC006A800BB5AAB /* AppDelegate.m in Sources */,
+				4FDD17AF1BC1325600470230 /* ISPhotoCollectionViewCell.m in Sources */,
 				4FDD17931BC0D1BB00470230 /* UIViewController+IStest.m in Sources */,
 				4FDD17811BC03DC400470230 /* ISUsersViewController.m in Sources */,
 				4FDD17721BC0295E00470230 /* NSManagedObjectModel+KCOrderedAccessorFix.m in Sources */,
@@ -829,10 +868,13 @@
 				4FDD17601BC0284900470230 /* ISComment.m in Sources */,
 				4FDD17551BC0284900470230 /* ISPost+CoreDataProperties.m in Sources */,
 				4FDD17611BC0284900470230 /* ISAlbum+CoreDataProperties.m in Sources */,
+				4FDD17A21BC10DCD00470230 /* ISAPIGetAlbums.m in Sources */,
 				4FDD17621BC0284900470230 /* ISAlbum.m in Sources */,
 				4FDD178F1BC0513F00470230 /* ISPostsTableViewController.m in Sources */,
 				4FDD17961BC0E8B500470230 /* ISTabBarController.m in Sources */,
 				4FDD17561BC0284900470230 /* ISPost.m in Sources */,
+				4FDD17A81BC1153200470230 /* ISPhotoCollectionViewController.m in Sources */,
+				4FDD17AB1BC116E600470230 /* ISAlbumsTableViewController.m in Sources */,
 				4F2C29A61BC006A800BB5AAB /* main.m in Sources */,
 				4FDD179F1BC1052A00470230 /* ISAPIGetComments.m in Sources */,
 				4FDD17711BC0295E00470230 /* CoreDataController.m in Sources */,

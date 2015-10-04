@@ -8,14 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
+#import "ISObject.h"
+
+#define entity_albums @"Albums"
+
+#define key_album_userId @"userId"
+#define key_album_id     @"id"
+#define key_album_title  @"title"
 
 @class ISPhoto, ISUser;
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ISAlbum : NSManagedObject
+@interface ISAlbum : ISObject
 
-// Insert code here to declare functionality of your managed object subclass
++ (instancetype)albumWithData:(NSDictionary *)data;
 
 @end
 

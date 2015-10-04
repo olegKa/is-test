@@ -24,12 +24,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - UITabBarControllerDelegate
-- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
-    if ([viewController isKindOfClass:[UINavigationController class]]) {
-        [(UINavigationController *)viewController popToRootViewControllerAnimated:NO];
-    };
-}
+//#pragma mark - UITabBarControllerDelegate
+//- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+//    if ([viewController isKindOfClass:[UINavigationController class]]) {
+//        [(UINavigationController *)viewController popToRootViewControllerAnimated:NO];
+//    };
+//}
 
 
 @end

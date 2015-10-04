@@ -11,5 +11,6 @@
 @interface ISAPIClient : AFHTTPSessionManager
 
 + (instancetype)sharedClient;
+- (void)loadImageUrl:(NSString *)url withCompletion:(void (^)(BOOL success, UIImage *image))complectionBlock;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "ISAPIClient.h"
+#import "AFHTTPRequestOperation.h"
 
 #define _url_ @"http://jsonplaceholder.typicode.com"
 
@@ -48,5 +49,23 @@
     [self.reachabilityManager stopMonitoring];
 }
 
+- (void)loadImageUrl:(NSString *)url withCompletion:(void (^)(BOOL success, UIImage *image))complectionBlock {
+    NSURLRequest *urlRequest = [[NSURLRequest alloc] initWithURL:[NSURL URLWithString:url]];
+    AFHTTPRequestOperation *requestOperation = [[AFHTTPRequestOperation alloc] initWithRequest:urlRequest];
+    requestOperation.responseSerializer = [AFImageResponseSerializer serializer];
+    [requestOperation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"Response: %@", responseObject);
+        if (complectionBlock) {
+            complectionBlock(YES, responseObject);
+        }
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Image error: %@", error);
+        if (complectionBlock) {
+            complectionBlock(NO, nil);
+        }
+    }];
+    [requestOperation start];
+}
 
 @end

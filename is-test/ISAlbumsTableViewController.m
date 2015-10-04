@@ -1,52 +1,65 @@
 //
-//  ISUsersViewController.m
+//  ISAlbumsTableViewController.m
 //  is-test
 //
-//  Created by OLEG KALININ on 03.10.15.
+//  Created by OLEG KALININ on 04.10.15.
 //  Copyright © 2015 OLEG KALININ. All rights reserved.
 //
 
-#import "ISUsersViewController.h"
+#import "ISAlbumsTableViewController.h"
+#import "ISPhotoCollectionViewController.h"
 #import "ISTabBarController.h"
-#import "CoreDataController.h"
-#import "ISUser.h"
-#import "ISAPIGetUsers.h"
+#import "ISAlbum.h"
+#import "ISAPIGetAlbums.h"
 
+static NSString *const identifierAlbumCell = @"albumCell";
 
-NSString *const identifierUserCell = @"userCell";
-
-@interface ISUsersViewController ()
+@interface ISAlbumsTableViewController ()
 <
-    NSFetchedResultsControllerDelegate,
-    ISAPIOperationDelegate
+    ISFetchedResultControllerDelegate
 >
+
 @end
 
-@implementation ISUsersViewController
+@implementation ISAlbumsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configure];
-    [self initializeFetchedResultsControllerForEntity:entity_user andSortDescriptionKeyName:key_user_name andSectionKeyName:nil];
+    self.fetchedResultControllerDelegate = self;
+    [self initializeFetchedResultsControllerForEntity:entity_albums andSortDescriptionKeyName:key_album_title andSectionKeyName:nil];
     [self fetchedResultsControllerExecute];
-    [self startUpdateData];
-}
+    [self startUpdateData];}
 
 - (void)configure {
-    self.navigationItem.title = @"USERS";
+    self.navigationItem.title = @"ALBUMS";
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Properties
+- (NSUInteger)userId {
+    return [((ISTabBarController *)self.tabBarController).user.id integerValue];
 }
 
 - (void)startUpdateData {
-    ISAPIGetUsers *operation = [[ISAPIGetUsers alloc] initWithAction:[ISAPIAction actionWithMethod:ISAPIActionMethodUsers]];
+    ISAPIGetAlbums *operation = [[ISAPIGetAlbums alloc] initWithAction:[ISAPIAction actionWithMethod:ISAPIActionMethodAlbums]];
+    operation.userId = self.userId;
     operation.delegate = self;
     [operation executeGET];
 }
 
+#pragma mark - ISFetchedResultControllerDelegate
+- (NSPredicate *)predicateForFetchedResultController {
+    NSPredicate *filter = [NSPredicate predicateWithFormat:@"userId == %d", self.userId];
+    return filter;
+}
+
 #pragma mark - NSFetchedResultControllerDelegate
+
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
     [self.tableView beginUpdates];
 }
@@ -91,16 +104,15 @@ NSString *const identifierUserCell = @"userCell";
 }
 
 
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserCell forIndexPath:indexPath];
-     [self configureCell:cell forIndexPath:indexPath];
-     return cell;
- }
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierAlbumCell forIndexPath:indexPath];
+    [self configureCell:cell forIndexPath:indexPath];
+    return cell;
+}
 
 - (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-    ISUser * user = [self.fetchedResultsController.sections[indexPath.section] objects][indexPath.row];
-    cell.textLabel.text = user.name;
-    cell.detailTextLabel.text = user.username;
+    ISAlbum * album = [self.fetchedResultsController.sections[indexPath.section] objects][indexPath.row];
+    cell.textLabel.text = album.title;
 }
 
 
@@ -109,11 +121,15 @@ NSString *const identifierUserCell = @"userCell";
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-    ISUser *selectedUser = [self.fetchedResultsController.sections[selectedIndexPath.section] objects][selectedIndexPath.row];
-    if ([segue.destinationViewController isKindOfClass:[ISTabBarController class]]) {
-        [(ISTabBarController *)segue.destinationViewController setUser:selectedUser];
+    
+    if ([segue.destinationViewController isKindOfClass:[ISPhotoCollectionViewController class]]) {
+        NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+        ISAlbum *album = [self.fetchedResultsController.sections[selectedIndexPath.section] objects][selectedIndexPath.row];
+        ISPhotoCollectionViewController *vc = (ISPhotoCollectionViewController *)segue.destinationViewController;
+        vc.albumId = [album.id integerValue];
     }
+    
+    
 }
 
 
