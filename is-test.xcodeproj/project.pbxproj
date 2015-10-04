@@ -52,6 +52,8 @@
 		4FDD178F1BC0513F00470230 /* ISPostsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD178E1BC0513F00470230 /* ISPostsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4FDD17931BC0D1BB00470230 /* UIViewController+IStest.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17921BC0D1BB00470230 /* UIViewController+IStest.m */; settings = {ASSET_TAGS = (); }; };
 		4FDD17961BC0E8B500470230 /* ISTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD17951BC0E8B500470230 /* ISTabBarController.m */; settings = {ASSET_TAGS = (); }; };
+		4FDD179C1BC1013A00470230 /* ISCommentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD179B1BC1013A00470230 /* ISCommentsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
+		4FDD179F1BC1052A00470230 /* ISAPIGetComments.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FDD179E1BC1052A00470230 /* ISAPIGetComments.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -153,6 +155,10 @@
 		4FDD17921BC0D1BB00470230 /* UIViewController+IStest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+IStest.m"; sourceTree = "<group>"; };
 		4FDD17941BC0E8B500470230 /* ISTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISTabBarController.h; sourceTree = "<group>"; };
 		4FDD17951BC0E8B500470230 /* ISTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISTabBarController.m; sourceTree = "<group>"; };
+		4FDD179A1BC1013A00470230 /* ISCommentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISCommentsTableViewController.h; sourceTree = "<group>"; };
+		4FDD179B1BC1013A00470230 /* ISCommentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISCommentsTableViewController.m; sourceTree = "<group>"; };
+		4FDD179D1BC1052A00470230 /* ISAPIGetComments.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISAPIGetComments.h; sourceTree = "<group>"; };
+		4FDD179E1BC1052A00470230 /* ISAPIGetComments.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISAPIGetComments.m; sourceTree = "<group>"; };
 		6E271F79DDB9987EF014C0A4 /* Pods_is_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_is_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7466CF9BE22C8F2196A9B5DC /* Pods-is-testUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-is-testUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-is-testUITests/Pods-is-testUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		7979749443D7E041D7E990F5 /* Pods-is-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-is-testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-is-testTests/Pods-is-testTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -268,6 +274,8 @@
 				4FDD17751BC02AFE00470230 /* ISAPIGetUsers.m */,
 				4FDD17251BC01DB200470230 /* ISAPIGetPosts.h */,
 				4FDD17261BC01DB200470230 /* ISAPIGetPosts.m */,
+				4FDD179D1BC1052A00470230 /* ISAPIGetComments.h */,
+				4FDD179E1BC1052A00470230 /* ISAPIGetComments.m */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -410,15 +418,14 @@
 		4FDD177B1BC03D6E00470230 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				4FDD17991BC100F800470230 /* Comments View Controller */,
 				4FDD17821BC03FA700470230 /* User View Controller */,
 				4FDD17891BC0509E00470230 /* Posts View Controller */,
 				4FDD178B1BC050CB00470230 /* ToDo View Controller */,
 				4FDD178A1BC050B500470230 /* Album View Controller */,
 				4FDD178C1BC050F400470230 /* Base View Controller */,
-				4FDD17911BC0D1BA00470230 /* UIViewController+IStest.h */,
-				4FDD17921BC0D1BB00470230 /* UIViewController+IStest.m */,
-				4FDD17941BC0E8B500470230 /* ISTabBarController.h */,
-				4FDD17951BC0E8B500470230 /* ISTabBarController.m */,
+				4FDD17971BC100B800470230 /* UIViewController+ISTest */,
+				4FDD17981BC100E200470230 /* TabBarController */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -473,6 +480,33 @@
 				4FDD17871BC04F6600470230 /* ToDo.storyboard */,
 			);
 			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		4FDD17971BC100B800470230 /* UIViewController+ISTest */ = {
+			isa = PBXGroup;
+			children = (
+				4FDD17911BC0D1BA00470230 /* UIViewController+IStest.h */,
+				4FDD17921BC0D1BB00470230 /* UIViewController+IStest.m */,
+			);
+			name = "UIViewController+ISTest";
+			sourceTree = "<group>";
+		};
+		4FDD17981BC100E200470230 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+				4FDD17941BC0E8B500470230 /* ISTabBarController.h */,
+				4FDD17951BC0E8B500470230 /* ISTabBarController.m */,
+			);
+			name = TabBarController;
+			sourceTree = "<group>";
+		};
+		4FDD17991BC100F800470230 /* Comments View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4FDD179A1BC1013A00470230 /* ISCommentsTableViewController.h */,
+				4FDD179B1BC1013A00470230 /* ISCommentsTableViewController.m */,
+			);
+			name = "Comments View Controller";
 			sourceTree = "<group>";
 		};
 		8B812DD84C07518557F061EE /* Pods */ = {
@@ -575,6 +609,11 @@
 				TargetAttributes = {
 					4F2C29A01BC006A800BB5AAB = {
 						CreatedOnToolsVersion = 7.0.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					4F2C29BC1BC006A800BB5AAB = {
 						CreatedOnToolsVersion = 7.0.1;
@@ -772,6 +811,7 @@
 				4FDD175B1BC0284900470230 /* ISAddress+CoreDataProperties.m in Sources */,
 				4FDD175C1BC0284900470230 /* ISAddress.m in Sources */,
 				4FDD17631BC0284900470230 /* ISPhoto+CoreDataProperties.m in Sources */,
+				4FDD179C1BC1013A00470230 /* ISCommentsTableViewController.m in Sources */,
 				4FDD17791BC02F4300470230 /* ISObject.m in Sources */,
 				4FDD17641BC0284900470230 /* ISPhoto.m in Sources */,
 				4FDD17761BC02AFE00470230 /* ISAPIGetUsers.m in Sources */,
@@ -794,6 +834,7 @@
 				4FDD17961BC0E8B500470230 /* ISTabBarController.m in Sources */,
 				4FDD17561BC0284900470230 /* ISPost.m in Sources */,
 				4F2C29A61BC006A800BB5AAB /* main.m in Sources */,
+				4FDD179F1BC1052A00470230 /* ISAPIGetComments.m in Sources */,
 				4FDD17711BC0295E00470230 /* CoreDataController.m in Sources */,
 				4FDD17571BC0284900470230 /* ISTodo+CoreDataProperties.m in Sources */,
 			);

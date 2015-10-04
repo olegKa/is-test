@@ -1,44 +1,51 @@
 //
-//  ISUsersViewController.m
+//  ISCommentsTableViewController.m
 //  is-test
 //
-//  Created by OLEG KALININ on 03.10.15.
+//  Created by OLEG KALININ on 04.10.15.
 //  Copyright © 2015 OLEG KALININ. All rights reserved.
 //
 
-#import "ISUsersViewController.h"
-#import "ISTabBarController.h"
-#import "CoreDataController.h"
-#import "ISUser.h"
-#import "ISAPIGetUsers.h"
+#import "ISCommentsTableViewController.h"
+#import "UIViewController+IStest.h"
+#import "ISComment.h"
+#import "ISAPIGetComments.h"
+
+NSString *const identifierCommentCell = @"commentCell";
 
 
-NSString *const identifierUserCell = @"userCell";
-
-@interface ISUsersViewController ()
+@interface ISCommentsTableViewController ()
 <
-    NSFetchedResultsControllerDelegate,
-    ISAPIOperationDelegate
+    ISFetchedResultControllerDelegate
 >
+
 @end
 
-@implementation ISUsersViewController
+@implementation ISCommentsTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self initializeFetchedResultsControllerForEntity:entity_user andSortDescriptionKeyName:key_user_name andSectionKeyName:nil];
+    [self initializeFetchedResultsControllerForEntity:entity_comments andSortDescriptionKeyName:key_comment_id andSectionKeyName:nil];
     [self fetchedResultsControllerExecute];
     [self startUpdateData];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (void)startUpdateData {
-    ISAPIGetUsers *operation = [[ISAPIGetUsers alloc] initWithAction:[ISAPIAction actionWithMethod:ISAPIActionMethodUsers]];
+    ISAPIGetComments *operation = [[ISAPIGetComments alloc] initWithAction:[ISAPIAction actionWithMethod:ISAPIActionMethodComments]];
     operation.delegate = self;
+    operation.postId = self.postId;
     [operation executeGET];
+}
+
+#pragma mark - ISFetchedResultControllerDelegate
+- (NSPredicate *)predicateForFetchedResultController {
+    NSPredicate *filter = [NSPredicate predicateWithFormat:@"postId == %d", self.postId];
+    return filter;
 }
 
 #pragma mark - NSFetchedResultControllerDelegate
@@ -86,30 +93,26 @@ NSString *const identifierUserCell = @"userCell";
 }
 
 
- - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierUserCell forIndexPath:indexPath];
-     [self configureCell:cell forIndexPath:indexPath];
-     return cell;
- }
-
-- (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
-    ISUser * user = [self.fetchedResultsController.sections[indexPath.section] objects][indexPath.row];
-    cell.textLabel.text = user.name;
-    cell.detailTextLabel.text = user.username;
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifierCommentCell forIndexPath:indexPath];
+    [self configureCell:cell forIndexPath:indexPath];
+    return cell;
 }
 
+- (void)configureCell:(UITableViewCell *)cell forIndexPath:(NSIndexPath *)indexPath {
+    ISComment * comment= [self.fetchedResultsController.sections[indexPath.section] objects][indexPath.row];
+    cell.textLabel.text = comment.name;
+    cell.detailTextLabel.text = comment.body;
+}
 
-
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
-    ISUser *selectedUser = [self.fetchedResultsController.sections[selectedIndexPath.section] objects][selectedIndexPath.row];
-    if ([segue.destinationViewController isKindOfClass:[ISTabBarController class]]) {
-        [(ISTabBarController *)segue.destinationViewController setUser:selectedUser];
-    }
+    // Get the new view controller using [segue destinationViewController].
+    // Pass the selected object to the new view controller.
 }
-
+*/
 
 @end

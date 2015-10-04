@@ -1,19 +1,19 @@
 //
-//  ISAPIGetPosts.m
+//  ISAPIGetComments.m
 //  is-test
 //
-//  Created by OLEG KALININ on 03.10.15.
+//  Created by OLEG KALININ on 04.10.15.
 //  Copyright © 2015 OLEG KALININ. All rights reserved.
 //
 
-#import "ISAPIGetPosts.h"
-#import "ISPost.h"
+#import "ISAPIGetComments.h"
+#import "ISComment.h"
 
-@implementation ISAPIGetPosts
+@implementation ISAPIGetComments
 
 - (instancetype)initWithAction:(ISAPIAction *)action {
     if (self = [super initWithAction:action]) {
-        _userId = NSNotFound;
+        _postId = NSNotFound;
     }
     return self;
 }
@@ -22,21 +22,21 @@
 - (void)executeGET {
     NSDictionary *parameters;
     
-    if (self.userId != NSNotFound) {
-        parameters = @{key_post_userId:@(self.userId)};
+    if (self.postId != NSNotFound) {
+        parameters = @{key_comment_postId:@(self.postId)};
     }
     
     [self executeWithParameters:parameters success:^(NSArray *data) {
         for (NSDictionary *item in data) {
-            [ISPost postWithData:item];
+            [ISComment commentWithData:item];
         }
         [[CoreDataController sharedController] saveContext];
     } failure:nil];
 }
 
 #pragma mark - Properties
-- (void)setUserId:(NSUInteger)userId {
-    _userId = userId;
+- (void)setPostId:(NSUInteger)postId {
+    _postId = postId;
 }
 
 @end
