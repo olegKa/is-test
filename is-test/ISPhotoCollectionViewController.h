@@ -6,10 +6,10 @@
 //  Copyright © 2015 OLEG KALININ. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ISBaseCollectionViewController.h"
 #import "UIViewController+IStest.h"
 
-@interface ISPhotoCollectionViewController : UICollectionViewController
+@interface ISPhotoCollectionViewController : ISBaseCollectionViewController
 
 @property (nonatomic, assign) NSUInteger albumId;
 

@@ -7,6 +7,7 @@
 //
 
 #import "AFHTTPSessionManager.h"
+#import "ISAPIClient.h"
 
 @interface ISAPIClient : AFHTTPSessionManager
 

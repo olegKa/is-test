@@ -9,7 +9,7 @@
 #import "ISBaseTableViewController.h"
 #import "UIViewController+IStest.h"
 
-@interface ISPostsTableViewController : UITableViewController
+@interface ISPostsTableViewController : ISBaseTableViewController
 
 @property (nonatomic, readonly) NSUInteger userId;
 

@@ -53,7 +53,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="49e-Tb-3d3" kind="show" identifier="segueUserToPosts" id="v8D-k0-YtT"/>
+                        <segue destination="49e-Tb-3d3" kind="showDetail" identifier="segueUserToPosts" id="v8D-k0-YtT"/>
                         <segue destination="HZu-Bc-kvU" kind="show" identifier="segueUserToAddress" id="ntS-ip-7Yg"/>
                     </connections>
                 </tableViewController>
@@ -327,7 +327,9 @@
                             <outlet property="delegate" destination="I9g-T2-afb" id="Lc9-1G-gYn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="COMMENTS" id="sSY-2q-AqG"/>
+                    <navigationItem key="navigationItem" title="COMMENTS" id="sSY-2q-AqG">
+                        <barButtonItem key="backBarButtonItem" title="POSTS" id="vsJ-sN-hRP"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qvJ-ax-fxx" userLabel="First Responder" sceneMemberID="firstResponder"/>

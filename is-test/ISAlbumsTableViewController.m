@@ -29,7 +29,8 @@ static NSString *const identifierAlbumCell = @"albumCell";
     self.fetchedResultControllerDelegate = self;
     [self initializeFetchedResultsControllerForEntity:entity_albums andSortDescriptionKeyName:key_album_title andSectionKeyName:nil];
     [self fetchedResultsControllerExecute];
-    [self startUpdateData];}
+    
+}
 
 - (void)configure {
     self.navigationItem.title = @"ALBUMS";
@@ -45,12 +46,25 @@ static NSString *const identifierAlbumCell = @"albumCell";
     return [((ISTabBarController *)self.tabBarController).user.id integerValue];
 }
 
-- (void)startUpdateData {
+#pragma mark - Override
+- (void)beginUpdateData {
     ISAPIGetAlbums *operation = [[ISAPIGetAlbums alloc] initWithAction:[ISAPIAction actionWithMethod:ISAPIActionMethodAlbums]];
     operation.userId = self.userId;
     operation.delegate = self;
     [operation executeGET];
 }
+
+#pragma mark - Notification handlers
+/*
+ // Uncomment for override network reachability handling
+ - (void)didNetworkReachabilityChangeStatus:(AFNetworkReachabilityStatus)status {
+ if (status > 0) {
+ [self beginUpdateData];
+ }
+ return;
+ }
+ 
+ */
 
 #pragma mark - IBAction
 - (IBAction)btnUsers:(id)sender {

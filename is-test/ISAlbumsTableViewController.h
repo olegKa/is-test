@@ -6,10 +6,10 @@
 //  Copyright © 2015 OLEG KALININ. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "ISBaseTableViewController.h"
 #import "UIViewController+IStest.h"
 
-@interface ISAlbumsTableViewController : UITableViewController
+@interface ISAlbumsTableViewController : ISBaseTableViewController
 
 @property (nonatomic, assign) NSUInteger userId;
 

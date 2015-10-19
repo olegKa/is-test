@@ -13,6 +13,7 @@ static void *FetchedResultsControllerDelegateExtension;
 
 @implementation UIViewController (IStest)
 
+
 #pragma mark - Properties
 - (NSFetchedResultsController *)fetchedResultsController {
     NSFetchedResultsController  *result = objc_getAssociatedObject(self, &FetchedResultsControllerExtension);
@@ -39,7 +40,10 @@ static void *FetchedResultsControllerDelegateExtension;
 - (void)operationFailed:(ISAPIOperation *)sender withError:(NSError *)error {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
                                                                    message:error.userInfo[NSLocalizedDescriptionKey]
-                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *actOK = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleDefault handler:nil];
+    [alert addAction:actOK];
     
     [self presentViewController:alert animated:YES completion:nil];
 }
@@ -78,7 +82,7 @@ static void *FetchedResultsControllerDelegateExtension;
         NSLog(@"Failed to initialize FetchedResultsController: %@\n%@", [error localizedDescription], [error userInfo]);
         abort();
     } else {
-        NSLog(@"Fetched %lu records", self.fetchedResultsController.fetchedObjects.count);
+        NSLog(@"Fetched %u records", self.fetchedResultsController.fetchedObjects.count);
     }
 }
 

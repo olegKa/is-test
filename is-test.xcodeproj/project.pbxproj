@@ -10,6 +10,7 @@
 		021CB09CCB708CF48107DDB2 /* Pods_is_testUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3021BDFBE38E01E884F085AA /* Pods_is_testUITests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		1EC017792C7AC4FE3CE34273 /* Pods_is_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E271F79DDB9987EF014C0A4 /* Pods_is_test.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		252EB758F9B97F5F36DE703C /* Pods_is_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08CD033E3B4545532B6846DE /* Pods_is_testTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4F11252A1BD4D01E009461FF /* ISBaseCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F1125291BD4D01E009461FF /* ISBaseCollectionViewController.m */; settings = {ASSET_TAGS = (); }; };
 		4F2C29A61BC006A800BB5AAB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C29A51BC006A800BB5AAB /* main.m */; };
 		4F2C29A91BC006A800BB5AAB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F2C29A81BC006A800BB5AAB /* AppDelegate.m */; };
 		4F2C29B21BC006A800BB5AAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F2C29B01BC006A800BB5AAB /* Main.storyboard */; };
@@ -82,6 +83,8 @@
 		08CD033E3B4545532B6846DE /* Pods_is_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_is_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0B9A1844A1E1E1B94B6C508A /* Pods-is-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-is-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-is-test/Pods-is-test.debug.xcconfig"; sourceTree = "<group>"; };
 		3021BDFBE38E01E884F085AA /* Pods_is_testUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_is_testUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F1125281BD4D01E009461FF /* ISBaseCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISBaseCollectionViewController.h; sourceTree = "<group>"; };
+		4F1125291BD4D01E009461FF /* ISBaseCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISBaseCollectionViewController.m; sourceTree = "<group>"; };
 		4F2C29A11BC006A800BB5AAB /* is-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "is-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2C29A51BC006A800BB5AAB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4F2C29A71BC006A800BB5AAB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -499,6 +502,8 @@
 			children = (
 				4FDD177C1BC03D9A00470230 /* ISBaseTableViewController.h */,
 				4FDD177D1BC03D9A00470230 /* ISBaseTableViewController.m */,
+				4F1125281BD4D01E009461FF /* ISBaseCollectionViewController.h */,
+				4F1125291BD4D01E009461FF /* ISBaseCollectionViewController.m */,
 			);
 			name = "Base View Controller";
 			sourceTree = "<group>";
@@ -878,6 +883,7 @@
 				4FDD17A81BC1153200470230 /* ISPhotoCollectionViewController.m in Sources */,
 				4FDD17AB1BC116E600470230 /* ISAlbumsTableViewController.m in Sources */,
 				4F2C29A61BC006A800BB5AAB /* main.m in Sources */,
+				4F11252A1BD4D01E009461FF /* ISBaseCollectionViewController.m in Sources */,
 				4FDD179F1BC1052A00470230 /* ISAPIGetComments.m in Sources */,
 				4FDD17711BC0295E00470230 /* CoreDataController.m in Sources */,
 				4FDD17571BC0284900470230 /* ISTodo+CoreDataProperties.m in Sources */,

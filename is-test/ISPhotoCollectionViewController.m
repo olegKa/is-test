@@ -35,7 +35,7 @@ static NSString *const identifierPhotoCell = @"photoCell";
     [self initializeFetchedResultsControllerForEntity:entity_photos andSortDescriptionKeyName:key_photo_id andSectionKeyName:nil];
     [self fetchedResultsControllerExecute];
     
-    [self startUpdateData];
+    [self beginUpdateData];
     
 }
 
@@ -48,7 +48,7 @@ static NSString *const identifierPhotoCell = @"photoCell";
     // Dispose of any resources that can be recreated.
 }
 
-- (void)startUpdateData {
+- (void)beginUpdateData {
     ISAPIGetPhotos *operation = [[ISAPIGetPhotos alloc] initWithAction:[ISAPIAction actionWithMethod:ISAPIActionMethodPhotos]];
     operation.albumId = self.albumId;
     operation.delegate = self;

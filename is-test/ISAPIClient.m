@@ -35,7 +35,7 @@
 
 - (instancetype)initWithBaseURL:(NSURL *)url {
     if (self = [super initWithBaseURL:url]) {
-        self.reachabilityManager = [AFNetworkReachabilityManager managerForDomain:[url absoluteString]];
+        self.reachabilityManager = [AFNetworkReachabilityManager sharedManager];
         [self.reachabilityManager startMonitoring];
         [self.reachabilityManager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
             NSLog(@"reachability for domain change to:%ld", (long)status);

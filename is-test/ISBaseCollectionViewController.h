@@ -1,8 +1,8 @@
 //
-//  ISBaseTableViewController.h
+//  ISBaseCollectionViewController.h
 //  is-test
 //
-//  Created by OLEG KALININ on 03.10.15.
+//  Created by OLEG KALININ on 19.10.15.
 //  Copyright © 2015 OLEG KALININ. All rights reserved.
 //
 
@@ -12,7 +12,7 @@
 #import "CoreDataController.h"
 
 
-@interface ISBaseTableViewController : UITableViewController
+@interface ISBaseCollectionViewController : UICollectionViewController
 
 - (void)beginUpdateData;
 

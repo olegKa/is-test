@@ -9,6 +9,6 @@
 #import "ISBaseTableViewController.h"
 #import "UIViewController+IStest.h"
 
-@interface ISUsersViewController : UITableViewController
+@interface ISUsersViewController : ISBaseTableViewController
 
 @end

@@ -30,11 +30,12 @@ NSString *const identifierPostCell = @"postCell";
     self.fetchedResultControllerDelegate = self;
     [self initializeFetchedResultsControllerForEntity:entity_posts andSortDescriptionKeyName:key_post_id andSectionKeyName:nil];
     [self fetchedResultsControllerExecute];
-    [self startUpdateData];
+    //[self startUpdateData];
 
 }
 
 - (void)configure {
+    //self.title = @"POSTS";
     self.navigationItem.title = @"POSTS";
     self.tableView.estimatedRowHeight = 35.0;
     self.tableView.rowHeight = UITableViewAutomaticDimension;
@@ -46,17 +47,32 @@ NSString *const identifierPostCell = @"postCell";
     
 }
 
-#pragma mark - Properties
-- (NSUInteger)userId {
-    return [((ISTabBarController *)self.tabBarController).user.id integerValue];
-}
-
-- (void)startUpdateData {
+#pragma mark - Overrided
+- (void)beginUpdateData {
     ISAPIGetPosts *operation = [[ISAPIGetPosts alloc] initWithAction:[ISAPIAction actionWithMethod:ISAPIActionMethodPosts]];
     operation.userId = self.userId;
     operation.delegate = self;
     [operation executeGET];
 }
+
+#pragma mark - Notification handlers
+/*
+// Uncomment for override network reachability handling
+- (void)didNetworkReachabilityChangeStatus:(AFNetworkReachabilityStatus)status {
+    if (status > 0) {
+        [self beginUpdateData];
+    }
+    return;
+}
+ 
+ */
+
+#pragma mark - Properties
+- (NSUInteger)userId {
+    return [((ISTabBarController *)self.tabBarController).user.id integerValue];
+}
+
+
 
 #pragma mark - ISFetchedResultControllerDelegate
 - (NSPredicate *)predicateForFetchedResultController {

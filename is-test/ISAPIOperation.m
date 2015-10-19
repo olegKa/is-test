@@ -22,6 +22,13 @@
 - (void)executeWithParameters:(NSDictionary *)parameters success:(void (^) (NSArray *data))success failure:(void (^)(NSError *error))failure {
     ISAPIClient *apiClient = [ISAPIClient sharedClient];
     
+    // 0 - проверка доступности интернет
+//    if (apiClient.reachabilityManager.networkReachabilityStatus <= 0) {
+//        NSError *error = [NSError errorWithDomain:NSURLErrorDomain code:-1009 userInfo:@{NSLocalizedDescriptionKey: @"The internet connection appears to be offline"}];
+//        [self processError:error withFailureBlock:failure];
+//        return;
+//    }
+    
     NSLog(@"POST with url:%@", self.action.path);
     
     [apiClient GET:self.action.path parameters:parameters success:^(NSURLSessionDataTask *task, id responseObject) {

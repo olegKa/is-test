@@ -29,7 +29,6 @@ NSString *const identifierCommentCell = @"postCell";
     [self configure];
     [self initializeFetchedResultsControllerForEntity:entity_comments andSortDescriptionKeyName:key_comment_id andSectionKeyName:nil];
     [self fetchedResultsControllerExecute];
-    [self startUpdateData];
 }
 
 - (void)configure {
@@ -44,12 +43,26 @@ NSString *const identifierCommentCell = @"postCell";
     // Dispose of any resources that can be recreated.
 }
 
-- (void)startUpdateData {
+#pragma mark - Overrided
+- (void)beginUpdateData {
     ISAPIGetComments *operation = [[ISAPIGetComments alloc] initWithAction:[ISAPIAction actionWithMethod:ISAPIActionMethodComments]];
     operation.delegate = self;
     operation.postId = self.postId;
     [operation executeGET];
 }
+
+#pragma mark - Notification handlers
+/*
+ // Uncomment for override network reachability handling
+ - (void)didNetworkReachabilityChangeStatus:(AFNetworkReachabilityStatus)status {
+ if (status > 0) {
+ [self beginUpdateData];
+ }
+ return;
+ }
+ 
+ */
+
 
 #pragma mark - ISFetchedResultControllerDelegate
 - (NSPredicate *)predicateForFetchedResultController {

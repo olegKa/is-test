@@ -33,7 +33,7 @@ NSString *const segueToAddress = @"segueUserToAddress";
     [self configure];
     [self initializeFetchedResultsControllerForEntity:entity_user andSortDescriptionKeyName:key_user_name andSectionKeyName:nil];
     [self fetchedResultsControllerExecute];
-    [self startUpdateData];
+    //[self startUpdateData];
 }
 
 - (void)configure {
@@ -44,11 +44,25 @@ NSString *const segueToAddress = @"segueUserToAddress";
     [super didReceiveMemoryWarning];
 }
 
-- (void)startUpdateData {
+
+#pragma mark - Overrided
+- (void)beginUpdateData {
     ISAPIGetUsers *operation = [[ISAPIGetUsers alloc] initWithAction:[ISAPIAction actionWithMethod:ISAPIActionMethodUsers]];
     operation.delegate = self;
     [operation executeGET];
 }
+
+#pragma mark - Notification handlers
+/*
+ // Uncomment for override network reachability handling
+ - (void)didNetworkReachabilityChangeStatus:(AFNetworkReachabilityStatus)status {
+ if (status > 0) {
+ [self beginUpdateData];
+ }
+ return;
+ }
+ 
+ */
 
 #pragma mark - NSFetchedResultControllerDelegate
 - (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
@@ -56,7 +70,6 @@ NSString *const segueToAddress = @"segueUserToAddress";
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id<NSFetchedResultsSectionInfo>)sectionInfo atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
-    NSLog(@"point");
 }
 
 - (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath {

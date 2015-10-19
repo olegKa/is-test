@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ISBaseTableViewController.h"
 
-@interface ISCommentsTableViewController : UITableViewController
+@interface ISCommentsTableViewController : ISBaseTableViewController
 
 @property (nonatomic, assign) NSUInteger postId;
 

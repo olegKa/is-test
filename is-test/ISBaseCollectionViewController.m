@@ -1,21 +1,19 @@
 //
-//  ISBaseTableViewController.m
+//  ISBaseCollectionViewController.m
 //  is-test
 //
-//  Created by OLEG KALININ on 03.10.15.
+//  Created by OLEG KALININ on 19.10.15.
 //  Copyright © 2015 OLEG KALININ. All rights reserved.
 //
 
-#import "ISBaseTableViewController.h"
+#import "ISBaseCollectionViewController.h"
 #import "ISAPIClient.h"
 
-@interface ISBaseTableViewController ()
-
-@property (nonatomic, readonly) BOOL clientIsReachable;
+@interface ISBaseCollectionViewController ()
 
 @end
 
-@implementation ISBaseTableViewController
+@implementation ISBaseCollectionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -35,7 +33,7 @@
 - (void)viewDidDisappear:(BOOL)animated {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
-    
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -68,7 +66,7 @@
 }
 
 - (void)updateStatus {
-   NSString *statusTitle = self.clientIsReachable? @"Online":@"Offline";
+    NSString *statusTitle = self.clientIsReachable? @"Online":@"Offline";
     self.navigationItem.rightBarButtonItem.title = statusTitle;
 }
 
@@ -101,15 +99,18 @@
     return;
 }
 
-#pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    NSAssert(NO, @"Method 'numberOfSectionsInTableView' must be overrided in child");
+#pragma mark <UICollectionViewDataSource>
+
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    NSAssert(NO, @"Method 'numberOfSectionsInCollectionView' must be overrided in child");
+
     return 0;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSAssert(NO, @"Method 'tableView:numberOfRowsInSection' must be overrided in child");
+
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    NSAssert(NO, @"Method 'collectionView:numberOfItemsInSection' must be overrided in child");
     return 0;
 }
 

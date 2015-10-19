@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "AFNetworkActivityIndicatorManager.h"
+#import "ISAPIClient.h"
 
 @interface AppDelegate ()
 
@@ -19,6 +20,9 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [application setMinimumBackgroundFetchInterval:UIApplicationBackgroundFetchIntervalMinimum] ;
     
+    // initialize network stack
+    [ISAPIClient sharedClient];
+    
     [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     
     UILocalNotification *locationNotification = [launchOptions objectForKey:UIApplicationLaunchOptionsLocalNotificationKey];
@@ -26,6 +30,7 @@
         // Set icon badge number to zero
         application.applicationIconBadgeNumber = 0;
     }
+    
     
     return YES;
 }
