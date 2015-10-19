@@ -15,15 +15,14 @@
 
 
 NSString *const identifierUserCell = @"userCell";
+NSString *const segueToPosts = @"segueUserToPosts";
+NSString *const segueToAddress = @"segueUserToAddress";
 
 @interface ISUsersViewController ()
 <
     NSFetchedResultsControllerDelegate,
     ISAPIOperationDelegate
 >
-{
-    NSIndexPath *selectedIndexPath;
-}
 
 @end
 
@@ -110,27 +109,32 @@ NSString *const identifierUserCell = @"userCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    selectedIndexPath = indexPath;
+    [self performSegueWithIdentifier:segueToPosts sender:indexPath];
 }
 
 - (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
-    selectedIndexPath = indexPath;
+    [self performSegueWithIdentifier:segueToAddress sender:indexPath];
 }
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if (selectedIndexPath) {
-        ISUser *selectedUser = [self.fetchedResultsController.sections[selectedIndexPath.section] objects][selectedIndexPath.row];
-        
-        if ([segue.destinationViewController isKindOfClass:[ISTabBarController class]]) {
-            [(ISTabBarController *)segue.destinationViewController setUser:selectedUser];
-        }
-        
-        if ([segue.destinationViewController isKindOfClass:[ISAddressAndCompanyTableViewController class]]) {
-            [(ISAddressAndCompanyTableViewController *)segue.destinationViewController setUser:selectedUser];
-        }
+    
+    NSIndexPath *selectedIndexPath = (NSIndexPath *)sender;
+    
+    ISUser *selectedUser = [self.fetchedResultsController.sections[selectedIndexPath.section] objects][selectedIndexPath.row];
+    
+    if ([segue.destinationViewController isKindOfClass:[ISTabBarController class]]) {
+        [(ISTabBarController *)segue.destinationViewController setUser:selectedUser];
     }
+    
+    if ([segue.destinationViewController isKindOfClass:[ISAddressAndCompanyTableViewController class]]) {
+        [(ISAddressAndCompanyTableViewController *)segue.destinationViewController setUser:selectedUser];
+    }
+
 }
 
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    return [sender isKindOfClass:[NSIndexPath class]];
+}
 
 @end

@@ -41,10 +41,6 @@
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
-                                <connections>
-                                    <segue destination="HZu-Bc-kvU" kind="show" trigger="accessoryAction" id="pU6-d9-08c"/>
-                                    <segue destination="49e-Tb-3d3" kind="showDetail" id="58X-qT-I7W"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -56,6 +52,10 @@
                         <barButtonItem key="backBarButtonItem" title="USERS" id="sXr-ie-mYO"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="segueUserToPosts" id="v8D-k0-YtT"/>
+                        <segue destination="HZu-Bc-kvU" kind="show" identifier="segueUserToAddress" id="ntS-ip-7Yg"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i91-CV-8Zg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -206,7 +206,6 @@
         <!--Navigation Controller-->
         <scene sceneID="6zr-QB-pDC">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DfK-Mh-jHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GOd-rm-eu8" sceneMemberID="viewController">
                     <toolbarItems/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -220,6 +219,7 @@
                         <segue destination="pi0-l7-9Ks" kind="relationship" relationship="rootViewController" id="6iF-VW-ZXv"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DfK-Mh-jHJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-153" y="238"/>
         </scene>

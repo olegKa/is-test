@@ -78,7 +78,7 @@ static void *FetchedResultsControllerDelegateExtension;
         NSLog(@"Failed to initialize FetchedResultsController: %@\n%@", [error localizedDescription], [error userInfo]);
         abort();
     } else {
-        NSLog(@"Fetched %u records", self.fetchedResultsController.fetchedObjects.count);
+        NSLog(@"Fetched %lu records", self.fetchedResultsController.fetchedObjects.count);
     }
 }
 

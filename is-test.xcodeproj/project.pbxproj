@@ -449,9 +449,6 @@
 				4FDD178C1BC050F400470230 /* Base View Controller */,
 				4FDD17971BC100B800470230 /* UIViewController+ISTest */,
 				4FDD17981BC100E200470230 /* TabBarController */,
-				4FDD17B21BC191D900470230 /* ISPostTableViewCell.h */,
-				4FDD17B31BC191D900470230 /* ISPostTableViewCell.m */,
-				4FDD17B41BC191D900470230 /* ISPostTableViewCell.xib */,
 				4FDD17B71BC19A7400470230 /* ISAddressAndCompanyTableViewController.h */,
 				4FDD17B81BC19A7400470230 /* ISAddressAndCompanyTableViewController.m */,
 			);
@@ -472,6 +469,9 @@
 			children = (
 				4FDD178D1BC0513F00470230 /* ISPostsTableViewController.h */,
 				4FDD178E1BC0513F00470230 /* ISPostsTableViewController.m */,
+				4FDD17B21BC191D900470230 /* ISPostTableViewCell.h */,
+				4FDD17B31BC191D900470230 /* ISPostTableViewCell.m */,
+				4FDD17B41BC191D900470230 /* ISPostTableViewCell.xib */,
 			);
 			name = "Posts View Controller";
 			sourceTree = "<group>";

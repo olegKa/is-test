@@ -23,8 +23,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self configureControls];
     
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [self configureControls];
+    [super viewWillAppear:animated];
 }
 
 - (void)configureControls {
